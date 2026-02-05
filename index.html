@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Website</title>
+
+<style>
+/* ===== Global ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    padding:10px 18px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* ===== Header ===== */
+header{
+    position:sticky;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    background:#002147;
+    color:white;
+    z-index:1000;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    background:white;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+/* Navigation */
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    margin:0 12px;
+    position:relative;
+}
+
+/* Hover underline animation */
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:yellow;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Apply button */
+.apply-btn{
+    background:yellow;
+    font-weight:bold;
+    margin-left:15px;
+}
+
+.apply-btn:hover{
+    background:orange;
+    transform:scale(1.05);
+}
+
+/* ===== Hero Section ===== */
+.hero{
+    height:60vh;
+    background:linear-gradient(rgba(0,0,0,0.5),
+              rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1500&q=80');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero button{
+    margin-top:20px;
+    background:yellow;
+}
+
+.hero button:hover{
+    background:orange;
+}
+
+/* ===== Explore Section ===== */
+.explore{
+    padding:50px 20px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+/* Card */
+.card{
+    width:300px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    transition:0.4s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Card Hover */
+.card:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 20px 35px rgba(0,0,0,0.2);
+}
+
+.card .icon{
+    font-size:40px;
+}
+
+.card p{
+    margin:15px 0;
+}
+
+.card button{
+    background:#002147;
+    color:white;
+}
+
+.card button:hover{
+    background:#004080;
+}
+
+/* ===== Events ===== */
+.events{
+    margin-top:30px;
+}
+
+.events button{
+    background:#002147;
+    color:white;
+}
+
+.events button:hover{
+    background:#004080;
+}
+
+/* ===== Footer ===== */
+footer{
+    margin-top:50px;
+    background:#002147;
+    color:white;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.footer-links a{
+    margin:0 12px;
+}
+
+.social-icons{
+    margin:15px 0;
+}
+
+/* Social hover */
+.social-icons a{
+    margin:0 8px;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    transform:translateY(-4px);
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-top:10px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo-area">
+        <div class="logo"></div>
+        <h2>Bannari Amman Institute of Technology</h2>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Academics</a>
+        <a href="#">Admissions</a>
+        <a href="#">Campus Life</a>
+        <a href="#">Contact</a>
+        <button class="apply-btn">Apply Now</button>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>Welcome to Excellence in Education</h1>
+    <p>Building careers, shaping futures.</p>
+    <button>Explore Programs</button>
+</section>
+
+<!-- Explore Section -->
+<section class="explore">
+    <h2>Explore Our College</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>About Us</h3>
+            <p>Learn about our legacy and mission.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌞</div>
+            <h3>Programs</h3>
+            <p>Discover modern courses and innovation.</p>
+            <button>View Programs</button>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏔️</div>
+            <h3>Campus Life</h3>
+            <p>Experience clubs, sports, and culture.</p>
+            <button>Discover More</button>
+        </div>
+    </div>
+
+    <div class="events">
+        <button>View All Events</button>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Admissions</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="social-icons">
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Facebook</a>
+    </div>
+
+    <div>
+        📞 +91 98765 43210 | ✉ info@college.edu
+    </div>
+</footer>
+
+</body>
+</html>
